@@ -2,7 +2,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor(); // ? agregar esta línea
 
 var app = builder.Build();
@@ -28,4 +28,5 @@ app.MapControllerRoute(
 
 app.MapBlazorHub(); // ? agregar esta línea
 app.MapFallbackToPage("/_Host"); // ? agregar esta línea
+
 app.Run();
