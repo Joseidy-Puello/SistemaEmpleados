@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
+builder.Services.AddServerSideBlazor(); // ? agregar esta línea
 
 var app = builder.Build();
 
@@ -24,4 +26,6 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+app.MapBlazorHub(); // ? agregar esta línea
+app.MapFallbackToPage("/_Host"); // ? agregar esta línea
 app.Run();
